@@ -7,7 +7,7 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def get_user_tasks
-    render json: get_current_user.tasks
+    render json: get_current_user.tasks.order(created_at: :desc)
   end 
 
   # POST /tasks or /tasks.json  
@@ -43,11 +43,10 @@ class TasksController < ApplicationController
   # DELETE /tasks/1 or /tasks/1.json
   def delete_user_task
     task = Task.find(params[:id])
-
-    if @task.destroy
-      render :show
+    if task.destroy
+      render json: {message: 'Task successfully deleted!'}
     else
-      render json: @task.errors.full_messages, status: 402
+      render json: task.errors.full_messages, status: 402
     end
   end
 
