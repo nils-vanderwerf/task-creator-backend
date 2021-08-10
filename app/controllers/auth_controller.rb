@@ -6,8 +6,18 @@ class AuthController < ApplicationController
     if user && user.authenticate(login_params[:password])
       token = set_token(user)
       render json: {user: user, token: token, message: "Login success"}
+      puts "======= USER IS AUTHENTICATED ====="
     else
-      render json: {errors: "Email or password not valid."}
+
+      puts "======= ERROR WITH AUTHENTICATION ====="
+      user = User.new(email: login_params[:email])
+      user.errors.add(:base)
+      puts "======= USER ========="
+      p user
+      # user.errors.add(:full_messages: "Email or password not valid.")
+      p "ERRORS:", user.errors
+      render json: user.errors
+      # render json: {errors: "Email or password not valid."}
     end
   end
 
