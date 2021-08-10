@@ -13,7 +13,6 @@ class HomeController < ApplicationController
             status: 200, 
             user_id: current_user.id,
             email: current_user.email, 
-            username: current_user.username,
             avatar: current_user.avatar 
             }
     end
