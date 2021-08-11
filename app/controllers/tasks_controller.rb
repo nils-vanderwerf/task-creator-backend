@@ -60,7 +60,7 @@ class TasksController < ApplicationController
     def task_params
       params
         .require(:task)
-        .permit(:id, :title, :description, :user_id)
+        .permit(:id, :title, :description, :user_id, category_ids:[])
         .with_defaults(:user_id => get_current_user.id)
     end
 end

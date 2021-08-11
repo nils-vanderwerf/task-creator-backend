@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tasks_categories
   # resources :users
   # resources :tasks
   post '/login'   => 'auth#login'
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   post '/users/:user_id/tasks'       => 'tasks#add_user_task'
   put '/users/:user_id/tasks/:id'    => 'tasks#edit_user_task'
   delete '/users/:user_id/tasks/:id' => 'tasks#delete_user_task'
+
+  get '/categories'   => 'categories#get_categories'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
