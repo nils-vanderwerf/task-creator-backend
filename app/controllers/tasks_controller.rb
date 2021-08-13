@@ -4,11 +4,46 @@ class TasksController < ApplicationController
   def get_tasks
     render json: {tasks: Task.all}
   end
-
   # GET /tasks or /tasks.json
   def get_user_tasks
-    render json: get_current_user.tasks.order(created_at: :desc)
-  end 
+    puts "CURRENT USER: #{get_current_user}"
+    if get_current_user
+      # if params[:category_ids].empty?
+      tasks = get_current_user.tasks.order(created_at: :desc)
+      tasks_categories = TaskSerializer.new(tasks)
+
+        puts "CATEGORRRIES", tasks_categories
+
+        render json: TaskSerializer.new(tasks).to_serialized_json
+    else 
+      render json: {
+        error: "Login to see tasks"
+      }
+    # render json: get_current_user.tasks.order(created_at: :desc)
+    end 
+  end
+  # class Api::V1::PetsController < ApplicationController
+  #   def index
+  #     if logged_in?
+  #       @pets = Pet.all
+  #       pets_json = PetSerializer.new(@pets)
+  #       render json: pets_json
+  #     else
+  #       render json: {
+  #         error: "Login to view pets."
+  #       }
+  #     end
+  #   end
+  
+  
+  
+  #   def show
+  #     @pet = Pet.find_by(id: params[:id])
+  #     pet_json = PetSerializer.new(@pet)
+  #     render json: pet_json
+  #   end
+  # end
+  
 
   # POST /tasks or /tasks.json  
   def add_user_task

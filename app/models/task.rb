@@ -4,4 +4,8 @@ class Task < ApplicationRecord
     has_many :categories, through: :task_categories
     
     accepts_nested_attributes_for :categories
+
+    def category_list
+        self.categories
+    end
 end

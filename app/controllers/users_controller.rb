@@ -14,7 +14,10 @@ class UsersController < ApplicationController
       puts "User first name:", user.first_name
       render json: {user: user, token: set_token(user)}
     else
-      render json: {errors: user.errors.full_messages}
+      user.errors.add(:base)
+      render json: {
+				message: user.errors.full_messages[0]
+			}, status: 500
     end
   end
 
