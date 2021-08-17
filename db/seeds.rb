@@ -46,44 +46,74 @@
 #   description: 'Getting pretty long',
 # )
 
-Category.create(
-    title: "Help Around House",
-    description: "Cleaning, yard maintenance, and home-office duties."
+# Category.create(
+#     title: "Help Around House",
+#     description: "Cleaning, yard maintenance, and home-office duties."
+# )
+
+# Category.create(
+#     title: "Personal Care",
+#     description: "Showering, toileting and mealtime assistance at home or in the community."
+# )
+
+# Category.create(
+#     title: "Education and employment",
+#     description: "Coaching to help you achieve your goals at school, college or work."
+# )
+
+# Category.create(
+#     title: "In home care",
+#     description: "In home care."
+# )
+
+# Category.create(
+#     title: "Transport",
+#     description: " Help to get your chores done or travel from A to B."
+# )
+
+# Category.create!(
+#     title: "Out and about",
+#     description: "Support to get out, take a class, exercise, volunteer or go to gatherings."
+# )
+
+# Category.create(
+#     title: "Therapy",
+#     description: "Therapy may include: Occupational therapy,
+#         Hydrotherapy, Exercise physiology, Counselling"
+# )
+
+
+# Category.create(
+#     title: "Specialised (Complex)",
+#     description: "May include but not limited to: Manual Handling (lifting, hoisting, transfers), Anaphylaxis. Allergies Epilepsy/Seizure Management. PEG/Enteral Feeding. Catheter Care. Medication Management. Mealtime Management. Swallow/Nutrition. Bowel Care. Diabetes Management. Positive Behaviour Support."
+# )
+
+TaskCategory.create(
+  task_id: 1,
+  category_id: 4
 )
 
-Category.create(
-    title: "Personal Care",
-    description: "Showering, toileting and mealtime assistance at home or in the community."
+TaskCategory.create(
+  task_id: 1,
+  category_id: 3
 )
 
-Category.create(
-    title: "Education and employment",
-    description: "Coaching to help you achieve your goals at school, college or work."
+TaskCategory.create(
+  task_id: 1,
+  category_id: 4
 )
 
-Category.create(
-    title: "In home care",
-    description: "In home care."
+TaskCategory.create(
+  task_id: 1,
+  category_id: 8
 )
 
-Category.create(
-    title: "Transport",
-    description: " Help to get your chores done or travel from A to B."
+TaskCategory.create(
+  task_id: 2,
+  category_id: 6
 )
 
-Category.create!(
-    title: "Out and about",
-    description: "Support to get out, take a class, exercise, volunteer or go to gatherings."
-)
-
-Category.create(
-    title: "Therapy",
-    description: "Therapy may include: Occupational therapy,
-        Hydrotherapy, Exercise physiology, Counselling"
-)
-
-
-Category.create(
-    title: "Specialised (Complex)",
-    description: "May include but not limited to: Manual Handling (lifting, hoisting, transfers), Anaphylaxis. Allergies Epilepsy/Seizure Management. PEG/Enteral Feeding. Catheter Care. Medication Management. Mealtime Management. Swallow/Nutrition. Bowel Care. Diabetes Management. Positive Behaviour Support."
+TaskCategory.create(
+    task_id: 2,
+    category_id: 4
 )
