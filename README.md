@@ -19,7 +19,7 @@ Rack-Cors
 ## Frontend
 
 Visit Task Creator Frontend for frontend installation instructions.
-Task Creator will load on localhost:3001, and is required to run simultaneously with the Petfundr Frontend. Type 'CTRL + C' to stop the Rails session.
+Task Creator will load on localhost:3001, oor http://localhost:3001 on the live heroku site and is required to run simultaneously with the Petfundr Frontend. Type 'CTRL + C' to stop the Rails session.
 
 
 
