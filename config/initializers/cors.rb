@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins ['https://task-creator-app.netlify.app', 'https://nils-task-creator-app.herokuapp.com', 'http://localhost:3001' ]
+    origins ['https://task-creator-app.netlify.app', 'https://nils-task-creator-app.herokuapp.com', 'http://localhost:3000' ]
 
     resource '*',
       headers: :any,
