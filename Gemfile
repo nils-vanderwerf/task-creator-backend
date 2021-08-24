@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'rack-cors'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt', '~> 2.2', '>= 2.2.3'
+gem 'rexml'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
